@@ -1,5 +1,5 @@
 services:
-  - type: web
+  - type: worker
     name: toolmate-teja-bot
     env: node
     plan: free
