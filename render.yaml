@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: toolmate-teja-bot
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: node bot/index.js
+    envVars:
+      - key: TELEGRAM_BOT_TOKEN
+        value: 7080911524:AAG_fJiu4n_o99xyD4bi6SIbpXKQtDfGoPw
+      - key: NODE_ENV
+        value: production

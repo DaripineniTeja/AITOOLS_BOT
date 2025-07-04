@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  telegram-bot:
+    build: .
+    environment:
+      - TELEGRAM_BOT_TOKEN=7080911524:AAG_fJiu4n_o99xyD4bi6SIbpXKQtDfGoPw
+      - NODE_ENV=production
+    restart: unless-stopped
+    volumes:
+      - ./bot:/app/bot
+      - ./package.json:/app/package.json
+    working_dir: /app
+    command: node bot/index.js

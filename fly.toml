@@ -1,0 +1,24 @@
+app = "toolmate-teja-bot"
+primary_region = "iad"
+
+[build]
+  builder = "heroku/buildpacks:20"
+
+[env]
+  NODE_ENV = "production"
+  TELEGRAM_BOT_TOKEN = "7080911524:AAG_fJiu4n_o99xyD4bi6SIbpXKQtDfGoPw"
+
+[processes]
+  app = "node bot/index.js"
+
+[[services]]
+  internal_port = 8080
+  protocol = "tcp"
+
+  [[services.ports]]
+    port = 80
+    handlers = ["http"]
+
+  [[services.ports]]
+    port = 443
+    handlers = ["tls", "http"]
